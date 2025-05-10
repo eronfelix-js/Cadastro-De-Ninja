@@ -12,9 +12,9 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    String nome;
-    int idade;
-    String email;
+    private String nome;
+    private int idade;
+    private String email;
 
     public NinjaModel(String nome, int idade, String email) {
         this.nome = nome;
