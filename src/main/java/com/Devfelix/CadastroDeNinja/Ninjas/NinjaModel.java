@@ -23,6 +23,8 @@ public class NinjaModel {
 
     private String nome;
     private int idade;
+
+    @Column(unique = true)
     private String email;
 
     // anotação usada para que o ninja possa participar de apenas uma missao
