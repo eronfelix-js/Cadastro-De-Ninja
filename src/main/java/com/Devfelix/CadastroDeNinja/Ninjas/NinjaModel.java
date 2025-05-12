@@ -3,12 +3,18 @@ package com.Devfelix.CadastroDeNinja.Ninjas;
 
 import com.Devfelix.CadastroDeNinja.Missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 // usar o jpa para transformar a classe em entidade usando o @Entity
 @Entity
 @Table(name = "cadastro_de_ninjas")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class NinjaModel {
 
     @Id
@@ -24,12 +30,5 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") // foreing key - chave estrangeira
     private List<MissoesModel> missoes;
 
-    public NinjaModel(String nome, int idade, String email) {
-        this.nome = nome;
-        this.idade = idade;
-        this.email = email;
-    }
-
-    public NinjaModel(){}
 
 }

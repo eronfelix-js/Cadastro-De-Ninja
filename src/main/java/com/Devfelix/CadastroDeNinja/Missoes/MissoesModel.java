@@ -2,11 +2,17 @@ package com.Devfelix.CadastroDeNinja.Missoes;
 
 import com.Devfelix.CadastroDeNinja.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "Missões")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class MissoesModel {
 
    @Id
@@ -21,14 +27,6 @@ public class MissoesModel {
 
    private NinjaModel ninja;
 
-    public MissoesModel(String nome, char hank, String descriçãoDaMissao) {
-        this.nome = nome;
-        this.hank = hank;
-        this.descriçãoDaMissao = descriçãoDaMissao;
-    }
-
-    public MissoesModel() {
-    }
 
     // anotação usada para dizer que a tabela de missoes pode se relacionar com varios usuarios
     @OneToMany(mappedBy = "missoes")
