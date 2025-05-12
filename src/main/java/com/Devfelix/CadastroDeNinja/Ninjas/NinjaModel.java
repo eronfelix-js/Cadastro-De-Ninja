@@ -1,0 +1,35 @@
+package com.Devfelix.CadastroDeNinja.Ninjas;
+
+
+import com.Devfelix.CadastroDeNinja.Missoes.MissoesModel;
+import jakarta.persistence.*;
+
+import java.util.List;
+
+// usar o jpa para transformar a classe em entidade usando o @Entity
+@Entity
+@Table(name = "cadastro_de_ninjas")
+public class NinjaModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
+    private String nome;
+    private int idade;
+    private String email;
+
+    // anotação usada para que o ninja possa participar de apenas uma missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // foreing key - chave estrangeira
+    private List<MissoesModel> missoes;
+
+    public NinjaModel(String nome, int idade, String email) {
+        this.nome = nome;
+        this.idade = idade;
+        this.email = email;
+    }
+
+    public NinjaModel(){}
+
+}
