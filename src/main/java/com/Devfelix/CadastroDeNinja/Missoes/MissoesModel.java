@@ -25,8 +25,6 @@ public class MissoesModel {
 
    private String descriçãoDaMissao;
 
-   private NinjaModel ninja;
-
 
     // anotação usada para dizer que a tabela de missoes pode se relacionar com varios usuarios
     @OneToMany(mappedBy = "missoes")

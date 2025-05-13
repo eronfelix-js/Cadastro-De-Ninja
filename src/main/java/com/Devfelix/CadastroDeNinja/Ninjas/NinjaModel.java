@@ -27,13 +27,16 @@ public class NinjaModel {
     @Column(name = "idade_Ninja")
     private int idade;
 
+    @Column(name = "Imagem_Ninja")
+    private String urlImage;
+
     @Column(unique = true)
     private String email;
 
     // anotação usada para que o ninja possa participar de apenas uma missao
     @ManyToOne
     @JoinColumn(name = "missoes_id") // foreing key - chave estrangeira
-    private List<MissoesModel> missoes;
+    private MissoesModel missoes;
 
 
 }
