@@ -1,6 +1,7 @@
 package com.Devfelix.CadastroDeNinja.Missoes;
 
 import com.Devfelix.CadastroDeNinja.Ninjas.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,5 +29,6 @@ public class MissoesModel {
 
     // anotação usada para dizer que a tabela de missoes pode se relacionar com varios usuarios
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 }
