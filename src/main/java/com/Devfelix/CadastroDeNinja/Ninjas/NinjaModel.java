@@ -21,6 +21,10 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     @Column(name = "Nome_do_Ninja")
     private String nome;
 
