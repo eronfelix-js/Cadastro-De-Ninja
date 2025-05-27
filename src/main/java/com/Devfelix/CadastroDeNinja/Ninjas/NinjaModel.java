@@ -14,7 +14,6 @@ import java.util.List;
 @Table(name = "cadastro_de_ninjas")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class NinjaModel {
 
     @Id

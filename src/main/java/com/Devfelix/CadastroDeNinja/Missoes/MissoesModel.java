@@ -4,8 +4,8 @@ import com.Devfelix.CadastroDeNinja.Ninjas.NinjaModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "Missões")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@ToString
 public class MissoesModel {
 
    @Id
@@ -21,9 +21,7 @@ public class MissoesModel {
    private Long id;
 
    private String nome;
-
    private char hank;
-
    private String descriçãoDaMissao;
 
 
@@ -31,4 +29,44 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes")
     @JsonIgnore
     private List<NinjaModel> ninjas;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public char getHank() {
+        return hank;
+    }
+
+    public void setHank(char hank) {
+        this.hank = hank;
+    }
+
+    public String getDescriçãoDaMissao() {
+        return descriçãoDaMissao;
+    }
+
+    public void setDescriçãoDaMissao(String descriçãoDaMissao) {
+        this.descriçãoDaMissao = descriçãoDaMissao;
+    }
+
+    public List<NinjaModel> getNinjas() {
+        return ninjas;
+    }
+
+    public void setNinjas(List<NinjaModel> ninjas) {
+        this.ninjas = ninjas;
+    }
 }

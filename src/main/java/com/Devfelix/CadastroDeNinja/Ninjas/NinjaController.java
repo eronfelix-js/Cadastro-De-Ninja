@@ -48,7 +48,7 @@ public class NinjaController {
         if (ninja !=null) {
             return ResponseEntity.ok(ninja);
         }else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O Ninja com o "+id+" não existe nos nossos registros");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O Ninja com o id "+id+" não existe nos nossos registros");
         }
     }
 
